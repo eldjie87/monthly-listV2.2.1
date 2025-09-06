@@ -1,0 +1,251 @@
+/* === Reset & font === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body, html {
+  height: 100%;
+  background: #fff8fb; /* lembut pastel */
+  color: #444;
+}
+
+.dashboard-root {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* === Saldo === */
+.saldo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffe6ef;
+  padding: 12px 18px;
+  border-radius: 12px;
+  margin: 16px;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.saldo .recharge {
+  background: #ff6fa8;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: 0.2s;
+}
+.saldo .recharge:hover {
+  background: #ff4d91;
+}
+
+/* === Tombol utama === */
+.btnContainer {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0 20px 0;
+}
+
+.btnContainer button {
+  background: #ffb6c1;
+  border: none;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.btnContainer button:hover {
+  background: #ff92ad;
+  color: white;
+}
+
+/* === Product List === */
+.productList {
+  flex: 1;
+  margin: 0 16px 16px 16px;
+  padding: 12px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.productListHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.products {
+  list-style: none;
+}
+
+.products li {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr auto;
+  gap: 8px;
+  align-items: center;
+  padding: 6px 10px;
+  margin: 4px 0;
+  border-radius: 8px;
+  background: #fff6fa;
+  font-size: 0.85rem;
+}
+
+.products li .deleteProduct {
+  cursor: pointer;
+  color: #888;
+  font-size: 0.9rem;
+}
+.products li .deleteProduct:hover {
+  color: red;
+}
+
+/* === Modal === */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 14px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.modal-content h2 {
+  margin-bottom: 12px;
+  color: #e75480;
+  font-size: 1.2rem;
+}
+
+.close-button {
+  position: absolute;
+  right: 12px;
+  top: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* Form di modal */
+.addProductForm,
+.saveProductForm {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.addProductForm input,
+.saveProductForm input {
+  padding: 6px 10px;
+  border: 1px solid #f8c6d7;
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+
+.addProductForm button,
+.saveProductForm button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  background: #ff92ad;
+  color: white;
+}
+.addProductForm button:hover,
+.saveProductForm button:hover {
+  background: #ff6fa8;
+}
+
+/* Preview di modal save */
+.preview {
+  margin-top: 10px;
+  padding: 10px;
+  background: #fff6fa;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.preview h3 {
+  margin: 0 0 6px;
+  font-size: 0.9rem;
+  color: #e75480;
+}
+
+.previewContent ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.previewContent li {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 6px;
+  margin: 2px 0;
+  border-radius: 6px;
+  background: #fef1f6;
+}
+
+/* Saved Files modal */
+.savedFilesList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.savedFilesList li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff6fa;
+  padding: 8px 10px;
+  margin: 4px 0;
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+.savedFilesList li .fileName {
+  font-weight: 500;
+}
+.savedFilesList li .viewfile {
+  cursor: pointer;
+  color: #e75480;
+  font-size: 0.8rem;
+}
+.savedFilesList li .deletefile {
+  cursor: pointer;
+  color: #888;
+}
+.savedFilesList li .deletefile:hover {
+  color: red;
+}
+
+/* === Footer === */
+footer {
+  margin-top: auto;
+  padding: 8px 0;
+  background: #fffafc;
+  text-align: center;
+  font-size: 12px;
+  color: #888;
+  border-top: 1px solid #f0d5df;
+  font-weight: bolder;
+}
